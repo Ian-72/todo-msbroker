@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const request = require('supertest');
 const { sendMessage } = require('../messageBroker').Producer;
 
-const target = 'http://localhost:9000';
+const target = 'http://localhost:8080';
 
 (async () => {
   const cTodoInChannel = 'req.create.todo';

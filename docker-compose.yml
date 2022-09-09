@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  rabbitmq-sevice:
+  rabbitmq-service:
     image: 'rabbitmq:3.10-management-alpine'
     container_name: rabbitmq-service
     environment:
@@ -21,13 +21,5 @@ services:
       - '8080:8080'
     restart: on-failure
     depends_on:
-      - waitforrabbit
       - rabbitmq-service
-  waitforrabbit:
-    image: dadarek/wait-for-dependencies
-    depends_on:
-      - rabbitmq-service 
-    environment:
-      - SLEEP_LENGTH=15
-      - TIMEOUT_LENGTH=600
-    command: rabbitmq-service:5672
+    command: sh -c '/bin/wait-for-it.sh rabbitmq-service:5672 --timeout=30 -- npm run start'

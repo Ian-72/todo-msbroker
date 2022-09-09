@@ -1,6 +1,8 @@
 FROM node:14-slim
 
-RUN apt update
+COPY ./wait-for-it.sh /bin
+
+RUN chmod +x /bin/wait-for-it.sh
 
 RUN npm install pnpm nodemon -g
 
