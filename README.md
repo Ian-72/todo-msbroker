@@ -33,7 +33,8 @@ Message queues implementation with RabbitMQ
   $ docker-compose build  
   ```
 
-3) Time to test 
+3) Time to test, you can use npm rather than pnpm, but I'm suggest to use pnpm
   ```
+  $ pnpm install -D
   $ npm run fn-test
   ```
