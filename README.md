@@ -5,7 +5,7 @@ Message queues implementation with RabbitMQ
 ## Usage guide
 1) Clone this repo and go to directory
   ```
-  $ https://github.com/Ian-72/todo-msbroker.git
+  $ git clone https://github.com/Ian-72/todo-msbroker.git
   $ cd todo-msbroker
   ```
 
