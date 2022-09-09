@@ -28,7 +28,7 @@ Message queues implementation with RabbitMQ
       - '8080:8080'
   ```
 
-3) Make sure you have install docker and docker compose. Then excute this command to build todo-service image
+3) Make sure you have docker and docker compose installed. Then run this command to build the todo-service image
   ```
   $ docker-compose build  
   ```
@@ -38,7 +38,7 @@ Message queues implementation with RabbitMQ
   $ docker-compose up
   ```
 
-5) Time to test. Move to another terminal and then excute this command. You can use npm rather than pnpm, but I'm suggest to use pnpm
+5) Time to test. Move to another terminal and then run this command. You can use npm rather than pnpm, but I'm suggest to use pnpm
   ```
   $ pnpm i -D
   $ pnpm i dotenv
