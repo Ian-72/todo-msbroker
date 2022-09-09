@@ -9,7 +9,7 @@ const target = 'http://localhost:8080';
   const cTodoInChannel = 'req.create.todo';
   const dTodoInChannel = 'req.delete.todo';
 
-  const todosName = ['Kiki', 'Raja', 'Andre', 'Bogang', 'Dandi'];
+  const todosName = ['Belanja buah di pasar', 'Beli buku', 'Rapikan kamar tidur', 'Baca buku baru', 'Buat catatan harian'];
   const todosId = [];
 
   describe('Functional Test', () => {
