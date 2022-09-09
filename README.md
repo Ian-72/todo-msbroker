@@ -28,13 +28,22 @@ Message queues implementation with RabbitMQ
       - '8080:8080'
   ```
 
-2) Make sure you have install docker and docker compose. Then excute this command to build todo-service image
+3) Make sure you have install docker and docker compose. Then excute this command to build todo-service image
   ```
   $ docker-compose build  
   ```
 
-3) Time to test, you can use npm rather than pnpm, but I'm suggest to use pnpm
+4) Time start app and test the app, you can use npm rather than pnpm, but I'm suggest to use pnpm
   ```
-  $ pnpm install -D
-  $ npm run fn-test
+  $ docker-compose up
+  $ pnpm i -D
+  $ pnpm i dotenv
+  $ pnpm run fn-test
   ```
+
+5) In the end you can verify incoming data in rabbitmq management and the todo api
+
+## API Endpoint
+|Endpoint     |Method   | Parameter          | Description                                   |
+|:------------|:--------| :------------------| :---------------------------------------------|
+| /todo-items | GET     | `application/json` | Return all todos data                         |
