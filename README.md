@@ -28,7 +28,7 @@ Message queues implementation with RabbitMQ
       - '8080:8080'
   ```
 
-3) Make sure you have docker and docker compose installed. Then run this command to build the todo-service image
+3) Make sure you have docker and docker-compose installed. Then run this command to build the todo-service image
   ```
   $ docker-compose build  
   ```
