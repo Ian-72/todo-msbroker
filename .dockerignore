@@ -1,0 +1,6 @@
+node_modules
+tes
+.env
+.dockerignore
+Dockerfile
+docker-compose.yml

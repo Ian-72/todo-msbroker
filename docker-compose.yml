@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  rabbitmq-sevice:
+    image: 'rabbitmq:3.10-management-alpine'
+    container_name: rabbitmq-service
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+  todo-service:
+    container_name: todo-service
+    build:
+      context: .
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+      - RABBITMQ_SERVER=amqp://user:password@rabbitmq-service
+    ports:
+      - '8080:8080'
+    restart: on-failure
+    depends_on:
+      - waitforrabbit
+      - rabbitmq-service
+  waitforrabbit:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - rabbitmq-service 
+    environment:
+      - SLEEP_LENGTH=15
+      - TIMEOUT_LENGTH=600
+    command: rabbitmq-service:5672
