@@ -33,9 +33,13 @@ Message queues implementation with RabbitMQ
   $ docker-compose build  
   ```
 
-4) Time start app and test the app, you can use npm rather than pnpm, but I'm suggest to use pnpm
+4) Start the app
   ```
   $ docker-compose up
+  ```
+
+5) Time to test. Move to another terminal and then excute this command. You can use npm rather than pnpm, but I'm suggest to use pnpm
+  ```
   $ pnpm i -D
   $ pnpm i dotenv
   $ pnpm run fn-test
